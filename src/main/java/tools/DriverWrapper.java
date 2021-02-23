@@ -9,17 +9,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.*;
 
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverWrapper
 {
-    private WebDriver driver;
+    private RemoteWebDriver driver;
     private JavascriptExecutor js;
+    protected DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
     public DriverWrapper(String browser)
     {
@@ -34,8 +40,17 @@ public class DriverWrapper
         switch(browser)
         {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+//                WebDriverManager.chromedriver().setup();
+                WebDriverManager.seleniumServerStandalone().setup();
+                try {
+                    desiredCapabilities.setCapability("accessKey", "");
+                    desiredCapabilities.setCapability(CapabilityType.BROWSER_NAME, "chrome");
+                    desiredCapabilities.setCapability(CapabilityType.PLATFORM_NAME, "Windows 10");
+                    driver = new RemoteWebDriver(new URL("https://uscloud.experitest.com/wd/hub"), desiredCapabilities);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+//                driver = new ChromeDriver();
                 break;
             case "ch":
                 WebDriverManager.chromedriver().setup();

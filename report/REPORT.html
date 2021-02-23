@@ -271,9 +271,9 @@
 
     <div class="w3-left-align w3-margin-top" id="desktop">
 
-        <h3 class="w3-center">TOTAL TESTS: <b>4</b></h3>
+        <h3 class="w3-center">TOTAL TESTS: <b>3</b></h3>
 
-       <button style='word-wrap: break-word; width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page1')">Dev_ch_1920x1080_index_page</button><button style='word-wrap: break-word; width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page2')">Dev_ch_1920x1080_index_page_element</button><button style='word-wrap: break-word; width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page3')">Dev_ch_1920x1080_index_page_hardcode</button><button style='word-wrap: break-word; width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page4')">Dev_ch_1920x1080_index_page_ignored_element</button>
+       <button style='word-wrap: break-word;  width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page1')"><b class='w3-red'>ERROR: </b>Dev_chrome_1920x1080_index_page</button><button style='word-wrap: break-word;  width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page2')"><b class='w3-red'>ERROR: </b>Dev_chrome_1920x1080_index_page_hardcode</button><button style='word-wrap: break-word;  width:100%;' class='w3-bar-item w3-button w3-left-align tablink' onclick="openLink(this, 'page3')"><b class='w3-red'>ERROR: </b>Dev_chrome_1920x1080_index_page_ignored_element</button>
 
     </div>
 
@@ -302,6 +302,30 @@
 
     <div class="w3-row">
         
+<hr> <pre>
+1920x1080. Failed test: TestExample#hardcoreExample()
+Actual and expected screenshots are not the same. Diff size = 1824761 expected [true] but found [false]
+</pre>
+<hr> <pre>
+1920x1080. Failed test: TestExample#ignorePageElementsExample()
+Actual and expected screenshots are not the same. Diff size = 4402410 expected [true] but found [false]
+</pre>
+<hr> <pre>
+1920x1080. Failed test: TestExample#indexPage()
+Actual and expected screenshots are not the same. Diff size = 4428783 expected [true] but found [false]
+</pre>
+<hr> <pre>
+1920x1080. Failed test: TestExample#indexPageElement()
+no such element: Unable to locate element: {"method":"css selector","selector":"a.full.forge"}
+  (Session info: chrome=88.0.4324.150)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BN0SG4N', ip: '172.30.30.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_162'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, agentName: US-SelWin, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\uscloud\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:50701}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), reportUrl: https://uscloud.experitest...., sessionId: 69a3557ebab6fcfd7ecd1be3631..., setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, viewUrl: https://uscloud.experitest...., webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 69a3557ebab6fcfd7ecd1be3631...}
+Session ID: 69a3557ebab6fcfd7ecd1be3631e9649
+*** Element info: {Using=css selector, value=a.full.forge}
+</pre>
 
     </div>
 
@@ -312,7 +336,7 @@
 
 <!--@@RESULTS-->
 
-<div id='page1' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_ch_1920x1080_index_page.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_ch_1920x1080_index_page.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_ch_1920x1080_index_page.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2></div></div><div id='page2' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_ch_1920x1080_index_page_element.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_ch_1920x1080_index_page_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_ch_1920x1080_index_page_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2></div></div><div id='page3' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_ch_1920x1080_index_page_hardcode.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_ch_1920x1080_index_page_hardcode.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_ch_1920x1080_index_page_hardcode.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2></div></div><div id='page4' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_ch_1920x1080_index_page_ignored_element.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_ch_1920x1080_index_page_ignored_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_ch_1920x1080_index_page_ignored_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2></div></div>
+<div id='page1' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_chrome_1920x1080_index_page.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_chrome_1920x1080_index_page.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_chrome_1920x1080_index_page.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2><img src='../screenshots/diff/dev_chrome_1920x1080_index_page.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2><img src='../screenshots/gifs/dev_chrome_1920x1080_index_page.gif'></div></div><div id='page2' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_chrome_1920x1080_index_page_hardcode.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_chrome_1920x1080_index_page_hardcode.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_chrome_1920x1080_index_page_hardcode.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2><img src='../screenshots/diff/dev_chrome_1920x1080_index_page_hardcode.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2><img src='../screenshots/gifs/dev_chrome_1920x1080_index_page_hardcode.gif'></div></div><div id='page3' class='w3-row w3-animate-right result' style='width: 80%; margin-left: 20%; display: none;'><h1 class='w3-center w3-cyan'>dev_chrome_1920x1080_index_page_ignored_element.png</h1><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>EXPECTED</h2><img src='../screenshots/expected/dev_chrome_1920x1080_index_page_ignored_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>ACTUAL</h2><img src='../screenshots/actual/dev_chrome_1920x1080_index_page_ignored_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>DIFFERENCE</h2><img src='../screenshots/diff/dev_chrome_1920x1080_index_page_ignored_element.png'></div><div class='w3-col' style='width:25%; padding:0 5px;'><h2 class='w3-center'>GIF</h2><img src='../screenshots/gifs/dev_chrome_1920x1080_index_page_ignored_element.gif'></div></div>
 
 <!--@@RESULTS-->
 

@@ -1,4 +1,7 @@
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import tools.DriverWrapper;
 import tools.TestConfig;
 import org.openqa.selenium.WebDriver;
@@ -13,21 +16,23 @@ import javax.imageio.stream.FileImageOutputStream;
 import javax.imageio.stream.ImageOutputStream;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class BaseTest
 {
     protected DriverWrapper driverWrapper;
-    protected WebDriver driver;
+    protected RemoteWebDriver driver;
     private Screenshoter screenshoter;
     private DiffImageGenerator differ;
 
     @BeforeClass
-    public void initBrowser()
-    {
+    public void initBrowser() throws MalformedURLException {
         TestConfig.initConfig();
 
-        driverWrapper = new DriverWrapper(TestConfig.browser);
-        driver = driverWrapper.getDriver();
+//        driverWrapper = new DriverWrapper(TestConfig.browser);
+        driverWrapper = new DriverWrapper("chrome");
+        driver = (RemoteWebDriver) driverWrapper.getDriver();
         screenshoter = new Screenshoter(driver);
         differ = new DiffImageGenerator();
     }
@@ -39,7 +44,7 @@ public class BaseTest
 
         // remove cookies after test
         driverWrapper.executeJs("window.localStorage.clear();");
-        driver.manage().deleteAllCookies();
+//        driver.manage().deleteAllCookies();
     }
 
     @AfterClass

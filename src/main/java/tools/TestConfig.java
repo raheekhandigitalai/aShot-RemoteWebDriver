@@ -23,6 +23,7 @@ public class TestConfig
     public static String clean = "0";
     public static String dimension = "1920x1080";
     public static String bash = "0";
+//    public static String cloud = "cloud";
 
     /*
      * Allowable difference size (number of different pixels) between two screenshots
